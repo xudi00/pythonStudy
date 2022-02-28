@@ -1,8 +1,5 @@
 # 输入M和N计算C(M,N)
 
-import re
-
-
 def main():
     def multi(x):
         sum = 1
