@@ -1,10 +1,13 @@
 '''
 Author: Xudi
 Date: 2022-06-25 16:43
-LastEditTime: 2022-06-28 20:59
+LastEditTime: 2022-07-01 16:15
 FilePath: \pythonStudy\card\card_tools.py
 Description: 名片管理系统的辅助功能
 '''
+from hashlib import new
+
+
 card_list= [{"name":"name", "age":"age", "phone":"phone", "email":"email"},\
     {"name":"123", "age":"12", "phone":"1234356", "email":"asdhihaui@maol.edu"}]
 
@@ -68,3 +71,22 @@ def del_list(name_input):
         if elem["name"] == name_input:
             card_list.pop(i)
     return card_list
+
+def deal_list(old_list:list):
+    name = input('请输入修改的姓名，不修改请按回车：')
+    age = input('请输入修改的年龄，不修改请按回车：')
+    phone = input('请输入修改的电话，不修改请按回车：')
+    email = input('请输入修改的邮箱，不修改请按回车：')
+    new_dict = {"name":name, "age":age, "phone":phone, "email":email}
+    if len(new_dict["name"])== 0:
+        new_dict["name"]=old_list[0]["name"]
+    if len(new_dict["age"])== 0:
+        new_dict["age"]=old_list[0]["age"]
+    if len(new_dict["phone"])== 0:
+        new_dict["phone"]=old_list[0]["phone"]
+    if len(new_dict["email"])== 0:
+        new_dict["email"]=old_list[0]["email"]
+    new_list = []
+    new_list.append(new_dict)
+    card_list.extend(new_list)
+    return new_list

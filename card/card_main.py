@@ -1,7 +1,7 @@
 '''
 Author: Xudi
 Date: 2022-06-25 16:43
-LastEditTime: 2022-06-28 21:04
+LastEditTime: 2022-07-01 16:12
 FilePath: \pythonStudy\card\card_main.py
 Description: 名片管理系统的主要使用框架
 '''
@@ -33,13 +33,14 @@ while True:
                 print("查询成功！")
                 print("1. 修改名片 2.删除名片 0.退出")
                 card_deal = input("请选择您要继续的操作！:")
-                # 1. 修改名片
+                #  1. 修改名片
                 if card_deal == "1":
                     card_tools.del_list(name_search)
-                    card_tools.list_table(card_tools.create_new())
+                    card_tools.list_table(card_tools.deal_list(name_find))
                     print("修改成功！")
                 # 2. 删除名片
                 elif card_deal == "2":
+                    print("删除之后的列表为：")
                     card_tools.list_table(card_tools.del_list(name_search))
                     print("删除成功！")
                 # 0. 退出
