@@ -22,7 +22,7 @@ while True:
         # 2.显示全部名片
         elif order_input == "2":
             tech_card_tools.list_table(tech_card_tools.show_card())
-        # TODO: 3. 查询名片并对名片进行操作
+        # 3. 查询名片并对名片进行操作
         elif order_input == "3":
             tech_card_tools.search_card()
         # 0. 退出系统
