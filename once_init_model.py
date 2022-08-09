@@ -19,7 +19,6 @@ class Player(object):
             cls.instance = super().__new__(cls)
         return cls.instance
 
-
 # 创造两个实例，判断其地址是否相同
 print(Player.instance)
 music1 = Player()
